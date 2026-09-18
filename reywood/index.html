@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo conceptual de solicitudes para Carpintería Reywood." />
+    <title>Reywood | Solicitudes de proyecto — Demo conceptual</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#solicitud">Ir a la solicitud</a>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Ir al inicio de la demo">
+        <span class="wordmark-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Reywood</span>
+      </a>
+      <span class="demo-chip">DEMO CONCEPTUAL</span>
+      <nav aria-label="Navegación principal">
+        <a href="#solicitud">Solicitar proyecto</a>
+        <a href="#bandeja">Bandeja CRM</a>
+        <a href="#pendientes">Pendientes</a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">DEMO CONCEPTUAL — DATOS DE DEMOSTRACIÓN</p>
+          <h1 id="hero-title">Solicitudes claras para proyectos a medida.</h1>
+          <p class="lead">Una muestra visual para elegir un proyecto, completar una solicitud y revisarla en una bandeja interna. No representa un sistema final ni una cotización.</p>
+          <a class="button button-primary" href="#solicitud">Iniciar solicitud <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-panel" aria-label="Resumen del flujo conceptual">
+          <p class="panel-label">Flujo de demostración</p>
+          <ol class="flow-list">
+            <li><span>01</span> Elegir tipo de proyecto</li>
+            <li><span>02</span> Registrar datos esenciales</li>
+            <li><span>03</span> Revisar en bandeja CRM</li>
+            <li><span>04</span> Simular derivación por correo</li>
+          </ol>
+          <p class="panel-note">La información se guarda solo en este navegador para la demostración.</p>
+        </div>
+      </section>
+
+      <section class="request-section shell" id="solicitud" aria-labelledby="request-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Solicitud de proyecto</p>
+            <h2 id="request-title">Empecemos por lo esencial</h2>
+          </div>
+          <p class="section-caption">Paso <strong id="step-current">1</strong> de 2</p>
+        </div>
+
+        <div class="stepper" aria-label="Progreso de solicitud">
+          <span class="step is-active" data-step="1"><b>1</b> Tipo de proyecto</span>
+          <span class="step" data-step="2"><b>2</b> Datos de contacto</span>
+        </div>
+
+        <section id="project-step" aria-labelledby="project-title">
+          <div class="section-intro">
+            <h3 id="project-title">¿Qué proyecto desea desarrollar?</h3>
+            <p>Seleccione una opción para continuar. Los textos son provisionales y reemplazables.</p>
+          </div>
+          <div class="project-grid" role="radiogroup" aria-label="Tipo de proyecto">
+            <button class="project-card" type="button" data-project="Cocina" role="radio" aria-checked="false">
+              <span class="project-icon kitchen" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-name">Cocina</span>
+              <span class="project-description">Propuesta provisional para organizar una solicitud de cocina a medida.</span>
+              <span class="select-indicator">Seleccionar <b aria-hidden="true">+</b></span>
+            </button>
+            <button class="project-card" type="button" data-project="Clóset" role="radio" aria-checked="false">
+              <span class="project-icon closet" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-name">Clóset</span>
+              <span class="project-description">Propuesta provisional para iniciar una solicitud de clóset a medida.</span>
+              <span class="select-indicator">Seleccionar <b aria-hidden="true">+</b></span>
+            </button>
+            <button class="project-card" type="button" data-project="Módulos de lavamanos" role="radio" aria-checked="false">
+              <span class="project-icon vanity" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="project-name">Módulos de lavamanos</span>
+              <span class="project-description">Propuesta provisional para solicitar un módulo de lavamanos.</span>
+              <span class="select-indicator">Seleccionar <b aria-hidden="true">+</b></span>
+            </button>
+          </div>
+          <p class="inline-error" id="project-error" role="alert" hidden>Seleccione un tipo de proyecto para continuar.</p>
+          <div class="step-actions">
+            <button class="button button-primary" id="continue-button" type="button">Continuar <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section id="form-step" class="form-step" aria-labelledby="form-title" hidden>
+          <div class="form-head">
+            <div>
+              <p class="selected-project">Proyecto seleccionado: <strong id="selected-project-label">—</strong></p>
+              <h3 id="form-title">Comparta sus datos de contacto</h3>
+              <p>Solo se solicitan los datos confirmados para esta demostración.</p>
+            </div>
+            <button class="text-button" id="change-project" type="button">Cambiar proyecto</button>
+          </div>
+          <form id="request-form" novalidate>
+            <div class="form-grid">
+              <label>
+                <span>Nombre</span>
+                <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required aria-describedby="name-error" />
+                <small class="field-error" id="name-error"></small>
+              </label>
+              <label>
+                <span>Zona</span>
+                <input id="zone" name="zone" type="text" maxlength="80" required aria-describedby="zone-error" />
+                <small class="field-error" id="zone-error"></small>
+              </label>
+              <label>
+                <span>NIT</span>
+                <input id="nit" name="nit" type="text" inputmode="text" maxlength="20" required aria-describedby="nit-error" />
+                <small class="field-error" id="nit-error"></small>
+              </label>
+              <label>
+                <span>Correo electrónico</span>
+                <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required aria-describedby="email-error" />
+                <small class="field-error" id="email-error"></small>
+              </label>
+            </div>
+            <section class="request-summary" aria-labelledby="summary-title">
+              <p class="summary-label">Resumen en vivo</p>
+              <h4 id="summary-title">Datos de la solicitud</h4>
+              <dl id="form-summary">
+                <div><dt>Proyecto</dt><dd data-summary="project">—</dd></div>
+                <div><dt>Nombre</dt><dd data-summary="name">Pendiente</dd></div>
+                <div><dt>Zona</dt><dd data-summary="zone">Pendiente</dd></div>
+                <div><dt>NIT</dt><dd data-summary="nit">Pendiente</dd></div>
+                <div><dt>Correo</dt><dd data-summary="email">Pendiente</dd></div>
+              </dl>
+            </section>
+            <div class="form-footer">
+              <p>Los datos se conservarán localmente solo para esta demo.</p>
+              <button class="button button-primary" id="submit-button" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+
+      <section class="inbox-section" id="bandeja" aria-labelledby="inbox-title">
+        <div class="shell">
+          <div class="section-heading inbox-heading">
+            <div>
+              <p class="eyebrow">Bandeja CRM · demostración</p>
+              <h2 id="inbox-title">Solicitudes recibidas</h2>
+              <p>Vista local para revisar y filtrar información de demostración.</p>
+            </div>
+            <div class="inbox-count"><span id="request-count">0</span> solicitudes</div>
+          </div>
+
+          <div class="filter-bar" aria-label="Filtros de solicitudes">
+            <label class="search-field"><span class="sr-only">Buscar por nombre o correo</span><span aria-hidden="true">⌕</span><input id="search-filter" type="search" placeholder="Buscar por nombre o correo" /></label>
+            <label><span>Tipo de proyecto</span><select id="project-filter"><option value="">Todos los tipos</option><option>Cocina</option><option>Clóset</option><option>Módulos de lavamanos</option></select></label>
+            <label><span>Estado</span><select id="status-filter"><option value="">Todos los estados</option><option>Nueva</option><option>Filtrada</option><option>Lista para derivar</option><option>Derivada al correo</option></select></label>
+          </div>
+
+          <div class="crm-layout">
+            <section class="request-list" aria-label="Lista de solicitudes">
+              <div class="list-head" aria-hidden="true"><span>Solicitud</span><span>Contacto</span><span>Estado</span><span>Recepción</span></div>
+              <div id="request-list" class="request-list-body"></div>
+              <p class="empty-state" id="empty-state" hidden>No hay solicitudes que coincidan con estos filtros.</p>
+            </section>
+
+            <aside class="request-detail" id="request-detail" aria-live="polite">
+              <div class="detail-placeholder" id="detail-placeholder">
+                <span class="placeholder-icon" aria-hidden="true">↗</span>
+                <h3>Seleccione una solicitud</h3>
+                <p>Revise los datos recibidos y la simulación de derivación.</p>
+              </div>
+              <div id="detail-content" hidden>
+                <div class="detail-topline"><span class="detail-id" id="detail-id"></span><span class="status-badge" id="detail-status"></span></div>
+                <h3 id="detail-project"></h3>
+                <p class="detail-received">Recibida <span id="detail-date"></span></p>
+                <dl class="detail-data">
+                  <div><dt>Nombre</dt><dd id="detail-name"></dd></div>
+                  <div><dt>Zona</dt><dd id="detail-zone"></dd></div>
+                  <div><dt>NIT</dt><dd id="detail-nit"></dd></div>
+                  <div><dt>Correo electrónico</dt><dd id="detail-email"></dd></div>
+                </dl>
+                <div class="mail-simulation">
+                  <p class="summary-label">Derivación conceptual</p>
+                  <strong id="mail-target">cotizaciones@carpinteriareywood.com</strong>
+                  <p id="mail-copy">Aún no se ha simulado la derivación de esta solicitud.</p>
+                </div>
+                <button class="button button-primary button-full" id="forward-button" type="button">Derivar solicitud <span aria-hidden="true">→</span></button>
+                <p class="forward-note">Simulación visual: no se envía ningún correo real.</p>
+              </div>
+            </aside>
+          </div>
+          <p class="inbox-confirmation" id="inbox-confirmation" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="pending-section shell" id="pendientes" aria-labelledby="pending-title">
+        <div class="pending-copy">
+          <p class="eyebrow">Para una siguiente validación</p>
+          <h2 id="pending-title">Pendientes fuera de esta demo</h2>
+          <p>Estos puntos están intencionalmente sin implementar y requieren confirmación de Reywood antes de definir el flujo final.</p>
+        </div>
+        <ul class="pending-list">
+          <li>Fotografías reales de proyectos o materiales.</li>
+          <li>Medidas requeridas para cada tipo de proyecto.</li>
+          <li>Coordinación de visitas.</li>
+          <li>Flujo exacto posterior a la solicitud.</li>
+          <li>Reglas reales de filtrado.</li>
+          <li>Forma real de envío del correo.</li>
+          <li>Campos adicionales que Reywood quiera solicitar posteriormente.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Carpintería Reywood · DEMO CONCEPTUAL — DATOS DE DEMOSTRACIÓN</p>
+      <p>Sin conexión productiva, autenticación ni envío real de correos.</p>
+    </footer>
+    <script type="module" src="/assets/app.js"></script>
+  </body>
+</html>

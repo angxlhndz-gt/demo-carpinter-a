@@ -1,0 +1,11 @@
+{
+  "name": "demo-carpinteria-reywood",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo conceptual local para Carpintería Reywood.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/demo-model.test.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
